@@ -10,10 +10,11 @@ def main():
     book_path = 'books/frankenstein.txt'
     after_read = read_book(book_path)
     after_count = count_words(after_read)
-    print(f'{after_read}\n the above book has {after_count} words in it.\n')
+    #print(f'{after_read}\n the above book has {after_count} words in it.\n')
     after_count_char = character_numbers(after_read)
     created_list_of_dicts = create_list_of_dicts(after_count_char)
     sorted_list = sort_on(created_list_of_dicts)
+    print(f'--- Begin report of {book_path} ---\n{after_count} words found in the document\n')
     print_sorted_list(sorted_list, created_list_of_dicts)
 
 
@@ -57,6 +58,7 @@ def print_sorted_list(list_to_print, dict_to_use):
         for item in dict_to_use:
             if char in item:
                 print(f"The '{char}' character was found {item[char]} times")
+    print(f'--- End report ---')
 
 
 main()
